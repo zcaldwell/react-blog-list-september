@@ -11,21 +11,18 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getBlogs();
-      console.log(data);
       setBlogs(data);
     };
     fetchData();
   }, []);
   return (
-    <main>
-      <section className="main">
-        <Header />
-        {blogs.map((blog) => (
-          <BlogCard key={blog.id} {...blog} />
-        ))}
-        <Footer />
-      </section>
-    </main>
+    <section className="main">
+      <Header />
+      {blogs.map((blog) => (
+        <BlogCard key={blog.id} {...blog} />
+      ))}
+      <Footer />
+    </section>
   );
 }
 
